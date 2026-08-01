@@ -2,6 +2,7 @@ package com.chinmayee.Springboot_beiginner.Services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.stereotype.Service;
 
@@ -50,5 +51,13 @@ public class UserService {
             }
         }
         return false;
+    }
+    public User myRandomUser(){
+        if(allUsers.isEmpty()){
+            return null;
+        }
+        Random rand = new Random();
+        int randomIndex = rand.nextInt(allUsers.size());
+        return allUsers.get(randomIndex);
     }
 }
